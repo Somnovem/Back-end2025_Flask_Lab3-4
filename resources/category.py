@@ -1,6 +1,7 @@
 from flask_smorest import Blueprint, abort
 from flask.views import MethodView
 from marshmallow import Schema, fields
+from flask_jwt_extended import jwt_required
 from models import db
 from models.category import CategoryModel
 from models.user import UserModel
@@ -15,10 +16,12 @@ class CategorySchema(Schema):
 
 @blp.route("/category")
 class CategoryList(MethodView):
+    @jwt_required()
     @blp.response(200, CategorySchema(many=True))
     def get(self):
         return CategoryModel.query.all()
 
+    @jwt_required()
     @blp.arguments(CategorySchema)
     @blp.response(201, CategorySchema)
     def post(self, data):

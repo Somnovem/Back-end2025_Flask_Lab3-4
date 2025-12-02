@@ -1,6 +1,7 @@
 from flask_smorest import Blueprint, abort
 from flask.views import MethodView
 from marshmallow import Schema, fields
+from flask_jwt_extended import jwt_required
 from models import db
 from models.record import RecordModel
 from models.category import CategoryModel
@@ -17,10 +18,12 @@ class RecordSchema(Schema):
 
 @blp.route("/record")
 class RecordList(MethodView):
+    @jwt_required()
     @blp.response(200, RecordSchema(many=True))
     def get(self):
         return RecordModel.query.all()
 
+    @jwt_required()
     @blp.arguments(RecordSchema)
     @blp.response(201, RecordSchema)
     def post(self, data):
