@@ -1,8 +1,8 @@
 """Add password column to user
 
 Revision ID: b23kq8m2pj49
-Revises: 44a45bbc4831
-Create Date: 2025-12-02 5:16:11.204543
+Revises: 53c86qbs5247
+Create Date: 2025-12-02 15:33:27.702467
 
 """
 from alembic import op
@@ -11,7 +11,7 @@ import sqlalchemy as sa
 
 # revision identifiers, used by Alembic.
 revision = 'b23kq8m2pj49'
-down_revision = '44a45bbc4831'
+down_revision = '53c86qbs5247'
 branch_labels = None
 depends_on = None
 

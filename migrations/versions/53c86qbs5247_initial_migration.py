@@ -1,8 +1,8 @@
 """Initial migration
 
-Revision ID: 44a45bbc4831
+Revision ID: 53c86qbs5247
 Revises:
-Create Date: 2025-12-02 3:02:20.431893
+Create Date: 2025-12-02 15:18:31.567414
 
 """
 from alembic import op
