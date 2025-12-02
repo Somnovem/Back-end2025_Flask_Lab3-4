@@ -1,0 +1,1 @@
+Basic SQLITE database configuration for Labs 3 and 4 done on Flask.
